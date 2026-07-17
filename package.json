@@ -1,0 +1,28 @@
+{
+  "name": "lernspiegel",
+  "version": "0.1.0",
+  "description": "Mirrors your Uni Münster Learnweb (Moodle) courses to local files — CLI + credential-free MCP server for AI coding agents",
+  "repository": "github:theitger/lernspiegel",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "learnweb": "dist/cli.js",
+    "learnweb-mcp": "dist/mcp.js"
+  },
+  "scripts": {
+    "build": "tsc"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "commander": "^15.0.0",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.1",
+    "typescript": "^7.0.2"
+  }
+}
