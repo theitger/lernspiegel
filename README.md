@@ -32,10 +32,28 @@ learnweb CLI  ──writes──►  ~/Learnweb/   ◄──reads── your AI 
 
 ## Install
 
+Via Homebrew:
+
+```sh
+brew tap theitger/tap
+brew install lernspiegel
+```
+
+This provides `learnweb` (the CLI) and `learnweb-mcp` (the token-free MCP server), and pulls in `node` automatically.
+
+Or manually from this repo:
+
 ```sh
 git clone https://github.com/theitger/lernspiegel
 cd lernspiegel
 npm install && npm run build && npm link   # provides `learnweb` and `learnweb-mcp`
+```
+
+Requirements:
+
+```text
+macos
+node >= 20
 ```
 
 ## Quickstart
