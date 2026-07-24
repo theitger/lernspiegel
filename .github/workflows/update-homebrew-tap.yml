@@ -1,6 +1,8 @@
 name: Update Homebrew tap
 
 on:
+  push:
+    tags: ["v*"]
   release:
     types: [published]
   workflow_dispatch:
@@ -16,7 +18,7 @@ jobs:
       - name: Compute release tarball checksum
         id: checksum
         run: |
-          TAG="${{ github.event.release.tag_name || inputs.tag }}"
+          TAG="${{ github.event.release.tag_name || inputs.tag || github.ref_name }}"
           URL="https://github.com/${{ github.repository }}/archive/refs/tags/${TAG}.tar.gz"
           curl -sSfL "$URL" -o release.tar.gz
           echo "sha256=$(sha256sum release.tar.gz | cut -d' ' -f1)" >> "$GITHUB_OUTPUT"
