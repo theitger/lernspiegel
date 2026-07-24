@@ -1,6 +1,6 @@
 {
   "name": "lernspiegel",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Mirrors your Uni Münster Learnweb (Moodle) courses to local files — CLI + credential-free MCP server for AI coding agents",
   "repository": "github:theitger/lernspiegel",
   "license": "MIT",

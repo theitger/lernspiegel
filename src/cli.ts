@@ -7,6 +7,11 @@ import { saveToken, getToken, deleteToken } from "./core/keychain.js";
 import { loadManifest, loadCourseIndex } from "./sync/manifest.js";
 import { syncCourses, fmtSize } from "./sync/sync.js";
 import { createInterface } from "node:readline/promises";
+import { readFileSync } from "node:fs";
+
+const { version } = JSON.parse(
+  readFileSync(new URL("../package.json", import.meta.url), "utf8"),
+) as { version: string };
 
 function promptHidden(question: string): Promise<string> {
   return new Promise((resolve) => {
@@ -94,7 +99,7 @@ const program = new Command();
 program
   .name("learnweb")
   .description("Mirrors Uni Münster Learnweb (Moodle) courses to local files")
-  .version("0.1.0");
+  .version(version);
 
 program
   .command("login")
